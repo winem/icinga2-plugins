@@ -46,19 +46,19 @@ usage = num_entries / max_entries * 100
 
 if usage >= args.crit:
 	code = 2
-	msg = "Conntrack pool usage over %s%%: %d (%d / %d)" % (args.crit, usage, num_entries, max_entries)
+	msg = "CONNTRACK COUNT CRITICAL - Conntrack pool usage over {4}%: {0}% ({1} / {2}) | conntrack_pool_usage={0}%;{3};{4};0;{2}".format(usage, num_entries, max_entries, args.warn, args.crit)
 
 elif usage >= args.warn:
 	code = 1
-	msg = "Conntrack pool usage over %s%%: %d (%d/ %d)" % (args.warn, usage, num_entries, max_entries)
+	msg = "CONNTRACK COUNT WARNING - Conntrack pool usage over {3}%: {0}% ({1} / {2}) | conntrack_pool_usage={0}%;{3};{4};0;{2}".format(usage, num_entries, max_entries, args.warn, args.crit)
 
 elif usage < args.warn:
 	code = 0
-	msg = "Conntrack pool usage as at %d%% (%d / %d)" % (usage, num_entries, max_entries)
+	msg = "CONNTRACK COUNT OK - Conntrack pool usage is at {0}% ({1} / {2}) | conntrack_pool_usage={0}%;{3};{4};0;{2}".format(usage, num_entries, max_entries, args.warn, args.crit)
 
 else:
 	code = 3
-	msg = "Please examine the situation manually and kindly do the needful!"
+	msg = "CONNTRACK COUNT UNKNOWN - Please examine the situation manually and kindly do the needful!"
 
 print(msg)
 sys.exit (code)
