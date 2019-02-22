@@ -3,3 +3,6 @@ This repo is a fork of https://github.com/BarbarossaTM/icinga2-plugins
 Actually I just wanted to fix two typos in the check_conntrack_size plugin but since I was just there I did some more stuff:
   - it's "python3ified" now
   - performance data are provided with the check result
+  - unnecessary `sudo` got removed from the command example
+
+The other modules were not modified yet. I might setup a bird and migrate the 3 other checks to Python3, too, and create a PR. 
