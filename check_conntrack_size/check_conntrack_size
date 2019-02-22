@@ -58,7 +58,7 @@ elif usage < args.warn:
 
 else:
 	code = 3
-	msg = "WTF? Please examinte the situation manually and kinly do the needful!"
+	msg = "WTF? Please examine the situation manually and kindly do the needful!"
 
 print msg
 sys.exit (code)
